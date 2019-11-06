@@ -35,3 +35,6 @@
 *.log
 Makefile
 cmake-build-debug
+cmake_install.cmake
+.idea
+
