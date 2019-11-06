@@ -27,12 +27,13 @@ If you are using [CLion](https://www.jetbrains.com/clion/) just open the `CMakeL
 
 Command line on **linux**:
 
-
 	$ cmake CMakeLists.txt
 	$ make
 
+Note that there may be a lot of warnings. This was originally created in in 2001, and compilers were a little more lax back then. 
 
 ## Running
+Server runs on port **4001**.
 
 	$ ./emserver
 
