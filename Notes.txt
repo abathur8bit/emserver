@@ -1,0 +1,63 @@
+# Notes
+Just some random notes. You can ignore this file.
+
+
+# TODO
+x Remove references to old mapping system (when I was using packets info instead of telnet)
+o convert CStr to string
+
+# Stuff
+
+
+This server builds, but not all classes are being used. I am building a different server that uses
+more updated classes, and just rolling back the lua support.
+
+World
+ MudObject
+ Room
+ Player
+  ClientHandler
+  EMScript
+ ScriptCmd
+ Area
+
+
+ emscript.cpp, adding the countRoomItems script command.
+
+ Working on being able to count if there are visible items in the room
+ so we can skip the "Also in the room" text if there are no players
+ or items.
+
+ See emscript.cpp, roomdefaults.b:showRoomItems
+
+ -working putting list into area list in world.cpp
+ -working on removing CStr from configparser.h (note that using std:: in configparser causes compile error in world.cpp
+
+ # extra workds and objects
+
+ In the case of talking to the vampire:
+
+ talk is defined in `commands.ini` as `talk onTalk object`
+ vampire is defined in `extrawords.ini` as `vampire vampire.b object`.
+
+
+ 1. Breaks input into verb and command.
+ 2. Looks up the command (was defined in extrawords.ini).
+ 3. Checks the command type (object player room).
+ 4. Checks if the player is carrying the object (not in this case).
+ 5. Checks if the room contains the object (not in this case).
+ 6. Checks if the word exists via world lookup word.
+ 7. Runs the handler for the object, as defined in extrawords.ini.
+
+ # Extra commands
+ Added in EMScript, and SmallBasic functions.
+
+ ## setobject
+ Sets the current object **ov** to the object specifed.
+
+ setobject itemId,location,found
+
+ - itemid - The object id of the item you are looking for
+ - location - 1 = players inventory, 2 = the room the player is in.
+
+ # Unit testing
