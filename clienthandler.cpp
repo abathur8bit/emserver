@@ -21,9 +21,8 @@
 
 *********************************************************************/
 
-//#include <list>
+#include <string>
 #include <ssobjects/logs.h>
-#include <ssobjects/cstr.h>
 
 #include "world.h"
 #include "player.h"
@@ -266,12 +265,12 @@ ClientHandler::saveUser(Player* pPlayer)
 {
   try
   {
-    CStr sScriptPathName = "users/";
+    string sScriptPathName = "users/";
     sScriptPathName += pPlayer->userName();
     sScriptPathName += ".b";
-    printf("Opening %s to save player vars\n",(CONSTCHAR*)sScriptPathName);
+    printf("Opening %s to save player vars\n",sScriptPathName.c_str());
 
-    File f((CONSTCHAR*)sScriptPathName,"w");
+    File f(sScriptPathName.c_str(),"w");
     list<Variable*>::iterator it;
     list<Variable*>& listVars = pPlayer->m_listVariables;
     for(it = listVars.begin(); it!=listVars.end(); it++)

@@ -22,7 +22,6 @@
 *********************************************************************/
 
 #include <ssobjects/logs.h>
-#include <ssobjects/cstr.h>
 #include "variable.h"
 #include "mudobject.h"
 #include "player.h"
@@ -686,7 +685,7 @@ Variable*
 EMScript::createNewVariable(const char* token)
 {
     FUNCLOG("EMScript::createNewVariable");
-    CStr t(token);
+    string t(token);
     if(t.find("pv.")==0 && m_pPlayer)
     {
         return m_pPlayer->findOrCreateVariable(token+3);
@@ -708,7 +707,7 @@ EMScript::createNewVariable(const char* token)
 Variable*
 EMScript::findVariableName(const char* token,list<Variable*>& searchList)
 {
-    CStr t(token);
+    string t(token);
     if(t.find("pv.")==0 && m_pPlayer)
     {
         // player variable

@@ -45,7 +45,7 @@ class Room : public MudObject
     int roomNum();             ///< Return the id of this room.
     void setRoomNum(const int iRoomID);     ///< Set this rooms id.
     //TODO: add ability to access the list of players
-    int numPlayers() {m_listPlayers.size();}
+    int numPlayers() {return m_listPlayers.size();}
 
 };
 

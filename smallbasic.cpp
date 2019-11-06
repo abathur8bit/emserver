@@ -43,7 +43,6 @@
 #include <string.h>
 #include <string>
 
-#include <ssobjects/cstr.h>
 #include <ssobjects/file.h>
 #include <ssobjects/logs.h>
 

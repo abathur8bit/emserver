@@ -2,12 +2,7 @@
 Just some random notes. You can ignore this file.
 
 
-# TODO
-x Remove references to old mapping system (when I was using packets info instead of telnet)
-o convert CStr to string
-
 # Stuff
-
 
 This server builds, but not all classes are being used. I am building a different server that uses
 more updated classes, and just rolling back the lua support.
@@ -31,7 +26,6 @@ World
  See emscript.cpp, roomdefaults.b:showRoomItems
 
  -working putting list into area list in world.cpp
- -working on removing CStr from configparser.h (note that using std:: in configparser causes compile error in world.cpp
 
  # extra workds and objects
 
