@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+# Build and run files
+*.log
+Makefile
+cmake-build-debug
