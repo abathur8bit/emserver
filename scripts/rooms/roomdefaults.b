@@ -26,14 +26,12 @@ playerWins:
 	print "Congratulations! You won!"
 	return
 
-
-
 onEnter:
-	print "ROOM "; rv.id
+	'print "ROOM "; rv.id
 	gosub onGlance
 
     countRoomItems objects,players,pv.RoomNum
-    print "num players ";players
+    'print "num players ";players
     if players > 1 then gosub makeannouncement
 	return
 makeannouncement:
@@ -115,6 +113,7 @@ showall:
 	gosub fullDescription
 '	print ""
 showall1:
+    print "Exits: ";
 	gosub showExits
 '	print ""
 	gosub showRoomItems
@@ -164,4 +163,10 @@ onAnnounceArrive:
 
 onAnnounceLeave:
     print announceName$;" just left the room."
+    return
+
+onInit:
+    return
+
+fullDescription:
     return

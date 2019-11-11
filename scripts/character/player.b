@@ -61,7 +61,8 @@ createNew:
 	input "Please enter a password  : ";pv.password$
 
     'starting room number
-	pv.RoomNum = 12
+	pv.RoomNum = 49
+	pv.AreaNum = 2
 	goto userLoggedIn
 
 
@@ -79,6 +80,8 @@ logoutEnd:
 onScore:
 	print "You have picked up a total of ";pv.score;
 	print " of a possible 7 treasures."
+	pv.bleh$ = "hello"
+	print "hmm ";pv.bleh$
 	if pv.score > 6 then goto gotAllTreasure
 	return
 

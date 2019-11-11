@@ -110,7 +110,7 @@ void World::initRooms()
       // create the rooms for this area
       for(int i=a->minRoomNum(); i < (int)a->maxRoomNum(); i++)
       {
-        sprintf(buf,"scripts/rooms/room%04d.b",i);
+        sprintf(buf,"scripts/rooms/room%d.b",i);
         try
         {
           // if construction of file ob succeeds, the file exists,

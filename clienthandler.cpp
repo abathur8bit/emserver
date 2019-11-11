@@ -66,7 +66,7 @@ ClientHandler::login(Player* pPlayer)
       throwGeneralException("Invalid  player room was defined after login.");
 
     pPlayer->setRoom(pNewRoom);
-    runScript(pPlayer->room(),pPlayer,NULL,FmtString("scripts/rooms/room%04d.b",pPlayer->roomNum()),"onEnter");
+    runScript(pPlayer->room(),pPlayer,NULL,FmtString("scripts/rooms/room%d.b",pPlayer->roomNum()),"onEnter");
     m_bLogin = false;
   }
 }
@@ -112,7 +112,7 @@ ClientHandler::processCmd(Player* pPlayer,const char* pszString)
           throwGeneralException(FmtString("No area defined for room number %d during login",pPlayer->roomNum()));
         pPlayer->setRoom(pNewRoom);
         pPlayer->setAreaNum(iAreaNum);
-        runScript(pPlayer->room(),pPlayer,NULL,FmtString("scripts/rooms/room%04d.b",pPlayer->roomNum()),"onEnter");
+        runScript(pPlayer->room(),pPlayer,NULL,FmtString("scripts/rooms/room%d.b",pPlayer->roomNum()),"onEnter");
         m_bLogin = false;
       }
       else
@@ -131,7 +131,7 @@ ClientHandler::processCmd(Player* pPlayer,const char* pszString)
           pPlayer->setRoom(pNewRoom);
 
           char script[MAX_PATH];
-          snprintf(script,sizeof(script)-1,"scripts/rooms/room%04d.b",pPlayer->roomNum());
+          snprintf(script,sizeof(script)-1,"scripts/rooms/room%d.b",pPlayer->roomNum());
           NULL_TERMINATE(script,sizeof script);
           runScript(pPlayer->room(),pPlayer,NULL,script,"onEnter");
         }
@@ -177,7 +177,7 @@ ClientHandler::processCmd(Player* pPlayer,const char* pszString)
 
           case ScriptCmd::ST_ROOM:
             {
-              snprintf(script,sizeof(script)-1,"scripts/rooms/room%04d.b",pPlayer->roomNum());
+              snprintf(script,sizeof(script)-1,"scripts/rooms/room%d.b",pPlayer->roomNum());
               NULL_TERMINATE(script,sizeof script);
               bContinueInput = runScript(pPlayer->room(),pPlayer,NULL,script,scriptCmd.handler());
             }
@@ -234,7 +234,7 @@ ClientHandler::processCmd(Player* pPlayer,const char* pszString)
           pPlayer->setRoom(pNewRoom);
           pPlayer->setAreaNum(iAreaNum);
 
-          snprintf(script,sizeof(script)-1,"scripts/rooms/room%04d.b",pPlayer->roomNum());
+          snprintf(script,sizeof(script)-1,"scripts/rooms/room%d.b",pPlayer->roomNum());
           NULL_TERMINATE(script,sizeof script);
           runScript(pPlayer->room(),pPlayer,NULL,script,"onEnter");
         }

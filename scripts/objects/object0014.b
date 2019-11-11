@@ -7,7 +7,7 @@
 
 onExamine:
  print "This is object number "; ov.id
- print "This is a find hand crafted mug."
+ print "This is some thick rope."
  return 
 
 

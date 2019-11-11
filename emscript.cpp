@@ -148,7 +148,7 @@ void EMScript::announcePlayer() {
 
     m_world.runScriptForRoom(
             m_pPlayer->room(),
-            FmtString("scripts/rooms/room%04d.b",m_pPlayer->roomNum()),
+            FmtString("scripts/rooms/room%d.b",m_pPlayer->roomNum()),
             arrive ? "onAnnounceArrive":"onAnnounceLeave",
             m_pPlayer);
 }
