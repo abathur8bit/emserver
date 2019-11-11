@@ -27,7 +27,7 @@ playerWins:
 	return
 
 onEnter:
-	'print "ROOM "; rv.id
+    if pv.admin = 1 then print "ROOM #"; rv.id
 	gosub onGlance
 
     countRoomItems objects,players,pv.RoomNum

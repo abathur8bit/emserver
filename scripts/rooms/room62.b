@@ -21,11 +21,6 @@ moveNorth:
  gosub onLeave
  return
 
-moveSouth:
- pv.RoomNum = pv.RoomNum + 8
- gosub onLeave
- return
-
 showExits:
- print "N,S,W,E"
+ print "N,W,E"
  return
