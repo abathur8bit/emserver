@@ -595,8 +595,20 @@ EMScript::countRoomItems()
 
     m_world.showPlayers(pvRoomID->intValue());
     Room* pRoom = m_world.findRoom(pvRoomID->intValue());
-    pvItemCount->setIntValue(pRoom->itemList()->size());
+    pvItemCount->setIntValue(countVisibleRoomItems(pRoom));
     pvPlayerCount->setIntValue(m_world.numPlayersInRoom(pRoom->id()));
+}
+
+int
+EMScript::countVisibleRoomItems(Room* pRoom) {
+    int count = 0;
+    list<MudObject*>::iterator it;
+    for(it=pRoom->itemList()->begin(); it!=pRoom->itemList()->end(); it++) {
+        Variable* v = (*it)->findVariableName("ov.invisible");
+        if(v && v->intValue() == 0)
+            count++;
+    }
+    return count;
 }
 
 void

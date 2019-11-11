@@ -120,6 +120,7 @@ class EMScript : public SmallBasic
     void showPlayersInventory();
     void checkInventory();
     void countRoomItems();
+    int  countVisibleRoomItems(Room* pRoom);
     void pickupItem();
     void dropItem();
     void reload();
